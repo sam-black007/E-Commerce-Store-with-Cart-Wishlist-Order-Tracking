@@ -1,0 +1,16 @@
+<svg width="360" height="80" viewBox="0 0 360 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF7B6D"/>
+      <stop offset="100%" stop-color="#9B2CFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="80" rx="16" fill="transparent"/>
+  <g transform="translate(12,8)">
+    <rect x="0" y="6" width="52" height="52" rx="12" fill="url(#grad1)"/>
+    <path d="M14 23C14 18.5817 17.5817 15 22 15H30C34.4183 15 38 18.5817 38 23V30H14V23Z" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <path d="M18 30H34L32.5 45C32.3 47.7 30.2 49.5 27.5 49.5H24.5C21.8 49.5 19.7 47.7 19.5 45L18 30Z" fill="white"/>
+    <path d="M22 22H30" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="82" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="white" letter-spacing="0.5">E-Store</text>
+</svg>

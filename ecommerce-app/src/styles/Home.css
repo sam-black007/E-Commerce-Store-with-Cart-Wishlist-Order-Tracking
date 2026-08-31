@@ -1,0 +1,155 @@
+/* Amazon-inspired home styles */
+.home {
+  width: 100%;
+  background: #f3f3f3;
+}
+
+.hero {
+  background: linear-gradient(90deg, #78d2f4 0%, #53a8e6 35%, #4875c6 100%);
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.hero-content {
+  max-width: 900px;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 2rem);
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+.hero .btn-primary {
+  min-width: 180px;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+}
+
+.features {
+  padding: 28px 20px 0;
+}
+
+.features-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 12px;
+  padding: 24px 18px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(15, 17, 17, 0.04);
+}
+
+.feature-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(180deg, #fff0d8 0%, #ffe0b2 100%);
+  border-radius: 50%;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: #565959;
+}
+
+.featured-products,
+.cta-section {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 0 20px 40px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.featured-products .products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.cta-section {
+  background: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 16px;
+  padding: 36px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.cta-section p {
+  margin-bottom: 24px;
+  color: #565959;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1rem;
+  color: #565959;
+  padding: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 20px;
+  color: #565959;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 540px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 320px;
+  }
+}
