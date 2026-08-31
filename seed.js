@@ -117,11 +117,11 @@ async function seedDatabase() {
 
     // Insert sample products
     const result = await Product.insertMany(sampleProducts);
-    console.log(`✅ Successfully seeded ${result.length} products!`);
+    console.log(` Successfully seeded ${result.length} products!`);
 
     process.exit(0);
   } catch (error) {
-    console.error('❌ Error seeding database:', error.message);
+    console.error(' Error seeding database:', error.message);
     process.exit(1);
   }
 }
