@@ -1,18 +1,11 @@
-const express = require('express');
-const router = express.Router();
+import { Router } from 'express';
+const router = Router();
+import { getAllProducts, getProductById, createProduct, getByCategory, searchProducts } from '../controllers/productController';
 
-router.get('/', (req, res) => {
-  console.log('GET /api/products called');
-  res.json({ products: [] });
-});
+router.get('/', getAllProducts);
+router.get('/search', searchProducts);
+router.get('/category/:category', getByCategory);
+router.get('/:id', getProductById);
+router.post('/', createProduct);
 
-router.post('/', (req, res) => {
-  console.log('POST /api/products called');
-  res.status(201).json({
-    _id: Date.now(),
-    name: req.body.name,
-    price: req.body.price
-  });
-});
-
-module.exports = router;
+export default router;

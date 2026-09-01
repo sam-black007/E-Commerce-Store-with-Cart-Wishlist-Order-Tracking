@@ -3,8 +3,19 @@ const Product = require('../models/Product');
 // Get all products
 exports.getAllProducts = async (req, res) => {
   try {
-    const products = await Product.find();
-    res.status(200).json({ products });
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 12;
+    const skip = (page - 1) * limit;
+
+    const totalProducts = await Product.countDocuments();
+    const products = await Product.find().skip(skip).limit(limit);
+
+    res.status(200).json({
+      products,
+      totalPages: Math.max(1, Math.ceil(totalProducts / limit)),
+      currentPage: page,
+      totalProducts,
+    });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -46,13 +57,16 @@ exports.getByCategory = async (req, res) => {
 // Search products
 exports.searchProducts = async (req, res) => {
   try {
-    const { query } = req.query;
+    const searchTerm = req.query.q || req.query.query || '';
+    const searchPattern = new RegExp(searchTerm, 'i');
+
     const products = await Product.find({
       $or: [
-        { name: { $regex: query, $options: 'i' } },
-        { description: { $regex: query, $options: 'i' } },
+        { name: { $regex: searchPattern } },
+        { description: { $regex: searchPattern } },
       ],
     });
+
     res.status(200).json({ products });
   } catch (error) {
     res.status(500).json({ message: error.message });
